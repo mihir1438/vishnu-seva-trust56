@@ -1,1 +1,779 @@
 # vishnu-seva-trust56
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vishnu Seva Trust - Old Age Home, Women Empowerment & Medical Camps</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+ 
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #2c2c2a;
+            background-color: #fafaf8;
+        }
+ 
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+ 
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #0C447C;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+ 
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+ 
+        nav a {
+            text-decoration: none;
+            color: #2c2c2a;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+ 
+        nav a:hover {
+            color: #0C447C;
+        }
+ 
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0C447C 0%, #185FA5 100%);
+            color: white;
+            padding: 5rem 5%;
+            text-align: center;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+ 
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+ 
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            opacity: 0.95;
+        }
+ 
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+ 
+        .btn {
+            padding: 0.75rem 2rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-block;
+        }
+ 
+        .btn-primary {
+            background: #D4537E;
+            color: white;
+        }
+ 
+        .btn-primary:hover {
+            background: #993556;
+            transform: translateY(-2px);
+        }
+ 
+        .btn-secondary {
+            background: white;
+            color: #0C447C;
+            border: 2px solid white;
+        }
+ 
+        .btn-secondary:hover {
+            background: transparent;
+            color: white;
+        }
+ 
+        /* Impact & Donation Section */
+        .impact-section {
+            padding: 4rem 5%;
+            background: #E6F1FB;
+        }
+ 
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: #0C447C;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+ 
+        .section-subtitle {
+            text-align: center;
+            color: #888780;
+            margin-bottom: 3rem;
+            font-size: 1.05rem;
+        }
+ 
+        .impact-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            border-left: 5px solid #D4537E;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+ 
+        .impact-container h2 {
+            color: #0C447C;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+ 
+        .impact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+ 
+        .info-box {
+            background: #fafaf8;
+            padding: 1.5rem;
+            border-radius: 6px;
+            border: 1px solid #d3d1c7;
+        }
+ 
+        .info-box label {
+            display: block;
+            color: #888780;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+ 
+        .info-box .value {
+            font-size: 1.5rem;
+            color: #0C447C;
+            font-weight: 600;
+        }
+ 
+        .progress-section {
+            margin-top: 2rem;
+        }
+ 
+        .progress-label {
+            color: #2c2c2a;
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.95rem;
+        }
+ 
+        .progress-bar {
+            background: #d3d1c7;
+            height: 12px;
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+ 
+        .progress-fill {
+            background: linear-gradient(90deg, #D4537E, #993556);
+            height: 100%;
+            width: 0%;
+            transition: width 0.3s;
+        }
+ 
+        .progress-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+ 
+        .detail-item {
+            text-align: center;
+            padding: 1rem;
+            background: #fafaf8;
+            border-radius: 6px;
+        }
+ 
+        .detail-item .amount {
+            font-size: 1.5rem;
+            color: #D4537E;
+            font-weight: 600;
+        }
+ 
+        .detail-item .label {
+            color: #888780;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+ 
+        /* Services Section */
+        .services {
+            padding: 4rem 5%;
+            background: white;
+        }
+ 
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+ 
+        .service-card {
+            background: #fafaf8;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid #d3d1c7;
+            text-align: center;
+            transition: all 0.3s;
+        }
+ 
+        .service-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transform: translateY(-4px);
+        }
+ 
+        .service-icon {
+            font-size: 2.5rem;
+            color: #D4537E;
+            margin-bottom: 1rem;
+        }
+ 
+        .service-card h3 {
+            color: #0C447C;
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+        }
+ 
+        .service-card p {
+            color: #5F5E5A;
+            font-size: 0.95rem;
+        }
+ 
+        /* Statistics Section */
+        .stats {
+            padding: 4rem 5%;
+            background: #fafaf8;
+        }
+ 
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+ 
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid #d3d1c7;
+            text-align: center;
+            transition: all 0.3s;
+        }
+ 
+        .stat-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+ 
+        .stat-number {
+            font-size: 2.5rem;
+            color: #D4537E;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+ 
+        .stat-label {
+            color: #0C447C;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+ 
+        .stat-description {
+            color: #5F5E5A;
+            font-size: 0.9rem;
+        }
+ 
+        /* About Section */
+        .about {
+            padding: 4rem 5%;
+            background: white;
+        }
+ 
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+ 
+        .about-text h2 {
+            color: #0C447C;
+            font-size: 1.9rem;
+            margin-bottom: 1rem;
+        }
+ 
+        .about-text p {
+            color: #2c2c2a;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+ 
+        .about-image {
+            background: #E6F1FB;
+            border-radius: 8px;
+            padding: 3rem 2rem;
+            text-align: center;
+            border: 2px solid #B5D4F4;
+        }
+ 
+        .about-image i {
+            font-size: 5rem;
+            color: #D4537E;
+        }
+ 
+        .about-image p {
+            margin-top: 1.5rem;
+            color: #0C447C;
+            font-weight: 500;
+        }
+ 
+        /* Donation Options Section */
+        .donation-options {
+            padding: 4rem 5%;
+            background: #E6F1FB;
+        }
+ 
+        .donation-methods {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+ 
+        .donation-method {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid #B5D4F4;
+            text-align: center;
+            transition: all 0.3s;
+        }
+ 
+        .donation-method:hover {
+            box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+ 
+        .donation-method i {
+            font-size: 2.5rem;
+            color: #D4537E;
+            margin-bottom: 1rem;
+        }
+ 
+        .donation-method h3 {
+            color: #0C447C;
+            margin-bottom: 0.8rem;
+        }
+ 
+        .donation-method p {
+            color: #5F5E5A;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+ 
+        .donation-method button {
+            width: 100%;
+        }
+ 
+        /* Contact Section */
+        .contact {
+            padding: 4rem 5%;
+            background: #0C447C;
+            color: white;
+        }
+ 
+        .contact-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+        }
+ 
+        .contact-info {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+ 
+        .contact-info h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+ 
+        .contact-info i {
+            margin-right: 0.8rem;
+            color: #D4537E;
+        }
+ 
+        .contact-info p {
+            margin-bottom: 0.5rem;
+        }
+ 
+        .contact-info a {
+            color: #B5D4F4;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+ 
+        .contact-info a:hover {
+            color: white;
+        }
+ 
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+ 
+        .social-icons a {
+            font-size: 1.5rem;
+            color: #D4537E;
+            transition: color 0.3s;
+        }
+ 
+        .social-icons a:hover {
+            color: white;
+        }
+ 
+        /* Footer */
+        footer {
+            background: #04342C;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+ 
+        footer p {
+            margin: 0.5rem 0;
+        }
+ 
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+ 
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+ 
+            .hero h1 {
+                font-size: 2rem;
+            }
+ 
+            .hero p {
+                font-size: 1rem;
+            }
+ 
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+ 
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+ 
+            .btn {
+                width: 100%;
+            }
+ 
+            .impact-info {
+                grid-template-columns: 1fr;
+            }
+ 
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <i class="fas fa-om"></i> Vishnu Seva Trust
+        </div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#impact">Our Goal</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#donate">Donate</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+ 
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>Serving with Heart and Faith</h1>
+        <p>Building a safe haven for our elders through our Old Age Home initiative, empowering women, and providing free healthcare across Ahmedabad</p>
+        <div class="hero-buttons">
+            <button class="btn btn-primary" onclick="document.getElementById('donate').scrollIntoView({behavior: 'smooth'})">
+                <i class="fas fa-heart"></i> Donate Now
+            </button>
+            <button class="btn btn-secondary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+                <i class="fas fa-handshake"></i> Volunteer
+            </button>
+        </div>
+    </section>
+ 
+    <!-- Impact & Donation Section -->
+    <section class="impact-section" id="impact">
+        <h2 class="section-title">Our Mission: Opening an Old Age Home</h2>
+        <p class="section-subtitle">Your support makes this dream possible</p>
+        <div class="impact-container">
+            <h2><i class="fas fa-building"></i> Building Our Old Age Home</h2>
+            
+            <div class="impact-info">
+                <div class="info-box">
+                    <label>Our Goal</label>
+                    <div class="value">₹50 Lakhs</div>
+                </div>
+                <div class="info-box">
+                    <label>Already Raised</label>
+                    <div class="value">₹0</div>
+                </div>
+                <div class="info-box">
+                    <label>Still Needed</label>
+                    <div class="value">₹50 Lakhs</div>
+                </div>
+            </div>
+ 
+            <div class="progress-section">
+                <div class="progress-label">
+                    <span>Progress to Goal</span>
+                    <span style="color: #D4537E;">0% Complete</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+ 
+            <div class="progress-details">
+                <div class="detail-item">
+                    <i class="fas fa-home" style="font-size: 2rem; color: #D4537E; margin-bottom: 0.5rem;"></i>
+                    <div class="amount">50+</div>
+                    <div class="label">Beds for Elderly</div>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-heart-pulse" style="font-size: 2rem; color: #D4537E; margin-bottom: 0.5rem;"></i>
+                    <div class="amount">24/7</div>
+                    <div class="label">Medical Care</div>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-users" style="font-size: 2rem; color: #D4537E; margin-bottom: 0.5rem;"></i>
+                    <div class="amount">15+</div>
+                    <div class="label">Staff Members</div>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-subtitle">Comprehensive support designed with care and compassion</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-home"></i>
+                </div>
+                <h3>Old Age Home</h3>
+                <p>Opening a caring residential facility for elderly citizens with dignified living, nutritious meals, 24/7 care, and emotional support</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-heartbeat"></i>
+                </div>
+                <h3>Free Medical Camps</h3>
+                <p>Regular health checkup camps providing free medical screening, consultation, and basic treatment for underprivileged communities</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-tooth"></i>
+                </div>
+                <h3>Free Dental Camps</h3>
+                <p>Comprehensive dental care camps offering check-ups, cleaning, extractions, and basic dental treatments at no cost</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-book"></i>
+                </div>
+                <h3>Women Empowerment</h3>
+                <p>Skill development, vocational training, financial literacy, and self-defense programs to build independent and confident women</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <h3>Income Generation Programs</h3>
+                <p>Supporting women through entrepreneurship training and microfinance initiatives for economic independence</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3>Community Awareness</h3>
+                <p>Health awareness campaigns, educational workshops, and community programs for holistic development</p>
+            </div>
+        </div>
+    </section>
+ 
+    <!-- Statistics Section -->
+    <section class="stats">
+        <h2 class="section-title">Our Impact So Far</h2>
+        <p class="section-subtitle">Proven commitment to community care</p>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Lives Touched</div>
+                <div class="stat-description">Elderly and needy individuals served</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">48</div>
+                <div class="stat-label">Medical Camps</div>
+                <div class="stat-description">Free health check-ups conducted</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">1000+</div>
+                <div class="stat-label">Women Trained</div>
+                <div class="stat-description">Skills & vocational programs</div>
+            </div>
+        </div>
+    </section>
+ 
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>About Vishnu Seva Trust</h2>
+                <p>Vishnu Seva Trust is a dedicated NGO working to serve the most vulnerable sections of society in Ahmedabad, Gujarat. Rooted in the principle of compassionate service, we are committed to enhancing the quality of life for elderly citizens and empowering women in our community.</p>
+                <p>Our current flagship initiative is establishing a welcoming Old Age Home where elderly individuals can live with dignity and receive comprehensive care. We also conduct regular free medical and dental camps to provide essential healthcare to underserved populations, and implement women empowerment programs to build strong, independent, and skilled women leaders.</p>
+                <p>With a vision to create a society where every individual—regardless of age, gender, or economic status—receives care, respect, and opportunity, we work tirelessly with dedication, compassion, and integrity. Your support helps us transform lives every single day.</p>
+            </div>
+            <div class="about-image">
+                <i class="fas fa-hands-praying"></i>
+                <p>Serving through Seva (Service)</p>
+            </div>
+        </div>
+    </section>
+ 
+    <!-- Donation Options Section -->
+    <section class="donation-options" id="donate">
+        <h2 class="section-title">Support Our Cause</h2>
+        <p class="section-subtitle">Multiple ways to make a difference</p>
+        <div class="donation-methods">
+            <div class="donation-method">
+                <i class="fas fa-rupee-sign"></i>
+                <h3>Bank Transfer</h3>
+                <p>Direct transfer to our registered bank account. Quick and secure.</p>
+                <button class="btn btn-primary" onclick="alert('Bank Details:\nAccount Holder: Vishnu Seva Trust\nAccount No: XXXXX\nIFSC: XXXXX\nBank: XXXXX')">View Details</button>
+            </div>
+            <div class="donation-method">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>UPI & Online</h3>
+                <p>Donate instantly through UPI or online payment platforms.</p>
+                <button class="btn btn-primary" onclick="alert('UPI ID: Pushpapussal07@gmail.com\nPhone: +91 77790 09820\nGoogle Pay / PhonePe available')">Donate via UPI</button>
+            </div>
+            <div class="donation-method">
+                <i class="fas fa-hands-helping"></i>
+                <h3>In-Kind Support</h3>
+                <p>Donate medicines, food, clothing, or other essential items.</p>
+                <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Get in Touch</button>
+            </div>
+        </div>
+    </section>
+ 
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3><i class="fas fa-map-marker-alt"></i> Location</h3>
+                <p>Vishnu Seva Trust<br>A-6 Samata Society<br>Keshavnagar, Ahmedabad 380027<br>Gujarat, India</p>
+            </div>
+            <div class="contact-info">
+                <h3><i class="fas fa-phone"></i> Contact</h3>
+                <p><a href="tel:+917779009820">+91 77790 09820</a></p>
+                <p><a href="mailto:Pushpapussal07@gmail.com">Pushpapussal07@gmail.com</a></p>
+            </div>
+            <div class="contact-info">
+                <h3><i class="fas fa-share-alt"></i> Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+                <p style="margin-top: 1rem;">Follow us for updates and stories from our community</p>
+            </div>
+        </div>
+    </section>
+ 
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Vishnu Seva Trust. All rights reserved.</p>
+        <p>Serving the elderly, empowering women, providing healthcare | Ahmedabad, Gujarat</p>
+    </footer>
+</body>
+</html>
